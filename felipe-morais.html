@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Desafio iMasters</title>
+	<style type="text/css">
+		html,body{margin:0;padding:0;}
+		#container {
+    		-webkit-perspective: 800;
+    		-webkit-perspective-origin: 50% 200px;
+    		margin-top:50px;
+    	}
+    	#imasters-cube{
+    		position: relative;
+		    margin: 0 auto;
+		    height: 360px;
+		    width: 360px;
+		    -webkit-transition: -webkit-transform 2s linear;
+		    -webkit-transform-style: preserve-3d;
+		    -webkit-animation: girar 10s infinite linear;
+    	}
+		#imasters-cube div{
+	      position: absolute;
+	      height: 360px;
+	      width: 360px;
+	      padding: 20px;
+	      background-color: #099;
+	      background-image: -webkit-repeating-linear-gradient(-90deg, transparent, transparent 133px, white 133px, white 134px),-webkit-repeating-linear-gradient(0deg, transparent, transparent 133px, white 133px, white 134px);
+	      background-size:134px 134px;
+	      border:1px solid #fff;
+	       
+	    }
+	    #container .front {
+    		-webkit-transform: rotateX(90deg) rotate(180deg) translateZ(200px);
+    		background:
+	    	-webkit-repeating-linear-gradient(0deg, transparent, transparent 134px, white 134px, white 135px),
+	    	-webkit-repeating-linear-gradient(-90deg, transparent, transparent 133px, white 133px, white 134px),
+	    	-webkit-linear-gradient(0deg, #099, #099 134px, red 134px, red 268px, #099 268px, #099) no-repeat,
+	    	-webkit-repeating-linear-gradient(0deg, #099, #099);
+	    	background-size:400px 134px;
+    	}
+	    #container .back {
+	    	-webkit-transform: translateZ(200px);
+	    	background:
+	    	-webkit-repeating-linear-gradient(0deg, transparent, transparent 134px, white 134px, white 135px),
+	    	-webkit-repeating-linear-gradient(-90deg, transparent, transparent 133px, white 133px, white 134px),
+	    	-webkit-linear-gradient(0deg, #099, #099 134px, orange 134px, orange 268px, #099 268px, #099) no-repeat,
+	    	-webkit-repeating-linear-gradient(0deg, #099, #099);
+	    }
+	    #container .top{-webkit-transform: rotateY(90deg) translateZ(200px);}
+	    #container .right{-webkit-transform: rotateY(180deg) translateZ(200px);}
+	    #container .bottom{-webkit-transform: rotateY(-90deg) translateZ(200px);}
+	    #container .left{-webkit-transform: rotateX(-90deg) translateZ(200px) rotate(180deg);}
+	    @-webkit-keyframes girar {
+    		from { -webkit-transform: rotateY(0) rotateX(0); }
+    		to { -webkit-transform: rotateY(-360deg) rotateX(360deg); }
+        }
+
+	</style>
+</head>
+<body>
+	<div id="container">
+	  <div id="imasters-cube">
+	    <div class="left"></div>
+	    <div class="top"></div>
+	    <div class="back"></div>
+	    <div class="front"></div>
+	    <div class="bottom"></div>
+	    <div class="right"></div>
+	  </div>
+	</div>
+</body>
+</html>
